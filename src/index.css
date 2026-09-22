@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&family=JetBrains+Mono:wght@500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: #0F1115;
+  color: #F9FAFB;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior-y: none;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #1A1D23;
+}
+::-webkit-scrollbar-thumb {
+  background: #3B0764;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #6D28D9;
+}
+
+@layer components {
+  .card {
+    @apply rounded-2xl bg-base-surface border border-base-border;
+  }
+  .card-hover {
+    @apply transition-all duration-200 hover:border-primary-600/50 hover:bg-base-surfaceLight;
+  }
+  .gradient-primary {
+    background: linear-gradient(135deg, #6D28D9 0%, #3B0764 100%);
+  }
+  .gradient-surface {
+    background: linear-gradient(135deg, #1A1D23 0%, #242830 100%);
+  }
+  .gradient-purple-glow {
+    background: radial-gradient(ellipse at center, rgba(109, 40, 217, 0.15) 0%, transparent 70%);
+  }
+  .text-gradient {
+    background: linear-gradient(135deg, #A78BFA 0%, #FFC107 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .input-field {
+    @apply w-full rounded-xl bg-base-surfaceLight border border-base-border px-4 py-3 text-text-primary placeholder:text-text-muted focus:border-primary-600 focus:outline-none focus:ring-1 focus:ring-primary-600 transition-colors;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium transition-all;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .animate-delay-100 { animation-delay: 100ms; }
+  .animate-delay-200 { animation-delay: 200ms; }
+  .animate-delay-300 { animation-delay: 300ms; }
+  .animate-delay-400 { animation-delay: 400ms; }
+  .animate-delay-500 { animation-delay: 500ms; }
+  .animate-fill-both {
+    animation-fill-mode: both;
+  }
+}
